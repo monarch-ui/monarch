@@ -1,0 +1,25 @@
+{
+  "name": "monarch",
+  "version": "0.0.1",
+  "homepage": "https://github.com/monarch-ui/monarch",
+  "description": "The monarch ui library",
+  "main": "src/monarch.less",
+  "keywords": [
+    "ui",
+    "library",
+    "framework",
+    "responsive",
+    "grid"
+  ],
+  "authors": [
+    "\"John Leonard  <thejohnleonard@gmail.com> (https://twitter.com/j__leonard)"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
