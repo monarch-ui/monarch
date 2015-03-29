@@ -1,0 +1,45 @@
+.example.hl{
+  .horizontal.layout{
+    #layout > .horizontal(0.5rem);
+  }
+}
+
+.example.vl{
+  .vertical.layout{
+    #layout > .vertical(0.5rem);
+  }
+}
+
+.example.rl{
+  .responsive.layout{
+    #layout > .vertical(0.5rem);
+  }
+}
+
+@media all and (min-width: 50em) {
+  .example.rl{
+    .responsive.layout{
+      #layout > .horizontal(0.5rem);
+    }
+  }
+}
+
+.example{
+  .grid{
+    #layout > .grid();
+    #layout > .generateColumns(12,0.75rem);
+  }
+  .stack{
+    #layout > .stack();
+  }
+  .grid-stack{
+    #layout > .stack();
+  }
+}
+
+@media all and (min-width: 50em) {
+  .example .grid-stack{
+    #layout > .grid();
+    #layout > .generateColumns(12,0.75rem);
+  }
+} 

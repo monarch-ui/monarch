@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Monach UI</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Vollkorn:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/docs.css">
+  </head>
+  <body>
+    <main>
+      <h1>Layouts</h1>
+
+<p class="major">Layouts are provided by the <mark>#layout</mark> mixins (<a href="https://github.com/monarch-ui/monarch/blob/master/src/less/imports/_layout.less">view source</a>).
+
+</p>
+
+<h3>Two things to know about layouts.</h3>
+<ol>
+  <li>Layouts use the current <a href="http://caniuse.com/#search=flex-box">flex box</a> standard. IE &lt;=10 is not supported.</li>
+  <li>There are <strong>no responsive breakpoints</strong> prescribed by the library. You have full control over your layouts.</li>
+</ol>
+
+<h2>Horizontal &amp; Vertical Layouts</h2>
+<p>Best for basic directional layouts that aren't intended to wrap.</p>
+
+<h6>Horizontal layout example</h6>
+
+<aside>
+  <div class="example hl">
+    <div class="horizontal layout">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+
+  <pre class="language-css"><code>
+.horizontal.layout{
+  #layout > .horizontal(@margin:0.5rem); 
+}
+  </code></pre>
+</aside>
+
+<h6>Vertical layout example</h6>
+<aside>
+
+  <div class="example vl">
+    <div class="vertical layout">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+
+  <pre class="language-css"><code>
+.vertical.layout{
+  #layout > .vertical(@margin:0.5rem); 
+}
+  </code></pre>
+</aside>
+
+<h6>Using breakpoints to switch between a horizontal and a vertical layout.</h6>
+
+<aside>
+
+  <div class="example rl">
+    <div class="responsive layout">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+
+<pre class="language-css"><code>
+/* mobile first. start with a vertical layout */
+.responsive.layout{
+  #layout > .vertical(@margin:0.5rem); 
+}
+
+/* for 50em and greater use a horizontal layout */
+@media all and (min-width: 50em) {
+  .responsive.layout{
+    #layout > .horizontal(@margin:0.5rem);
+  }
+}
+</code></pre>
+
+</aside>
+
+
+<h2>Grid &amp; Stack Layouts</h2>
+<p>Your classic responsive grid system.</p>
+
+<h6>Grid layout example</h6>
+
+<aside>
+
+  <div class="example">
+    <div class="grid">
+      <div class="box column-4"></div>
+      <div class="box column-4"></div>
+      <div class="box column-4"></div>
+    </div>
+  </div>
+
+  <div>
+<pre class="language-markup"><code>
+&lt;div class='grid'&gt;
+  &lt;div class='column-4'&gt;&lt;/div&gt;
+  &lt;div class='column-4'&gt;&lt;/div&gt;
+  &lt;div class='column-4'&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="language-css"><code>
+.grid{
+  #layout > .grid();
+  #layout > .generateColumns(@columns:12,@gutter:0.75rem);
+}
+</code></pre>
+  </div>
+
+</aside>
+
+<h6>Stack layout example</h6>
+
+<aside>
+
+  <div class="example">
+    <div class="stack">
+      <div class="box column-4"></div>
+      <div class="box column-4"></div>
+      <div class="box column-4"></div>
+    </div>
+  </div>
+
+  <div>
+<pre class="language-markup"><code>
+&lt;div class='stack'&gt;
+  &lt;div class='column-4'&gt;&lt;/div&gt;
+  &lt;div class='column-4'&gt;&lt;/div&gt;
+  &lt;div class='column-4'&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="language-css"><code>
+.stack{
+  #layout > .stack();
+}
+</code></pre>
+  </div>
+
+</aside>
+
+<h6>Using breakpoints to switch between a horizontal and a vertical layout.</h6>
+
+<aside>
+
+  <div class="example">
+    <div class="grid-stack">
+      <div class="box column-4"></div>
+      <div class="box column-4"></div>
+      <div class="box column-4"></div>
+    </div>
+  </div>
+
+  <div>
+<pre class="language-markup"><code>
+&lt;div class='grid-stack'&gt;
+  &lt;div class='column-4'&gt;&lt;/div&gt;
+  &lt;div class='column-4'&gt;&lt;/div&gt;
+  &lt;div class='column-4'&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre class="language-css"><code>
+/* mobile first. start with a stack. */
+.grid-stack{
+  #layout > .stack();
+}
+
+/* >= 50em uses a grid layout. */
+@media all and (min-width: 50em) {
+  .grid-stack{
+    #layout > .grid();
+    #layout > .generateColumns(@columns:12,@gutter:0.75rem);
+  }
+}
+</code></pre>
+  </div>
+
+</aside>
+    </main>
+    <script title="jQuery CDN" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/prism.js"></script>
+  </body>
+</html>

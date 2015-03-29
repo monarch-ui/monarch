@@ -1,0 +1,77 @@
+@import '_prism.less';
+@import '../../src/less/monarch.less';
+
+@sans : 'Lato', sans-serif;
+@serif : 'VollKorn', serif;
+@baseUnit : 1rem;
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-size: @baseUnit;
+  font-family: @sans;
+  line-height: 1.25;
+}
+
+main{
+  margin: 0 auto;
+  width: 70%;
+}
+
+section{
+  height: 90vh;
+  &:first-child{
+    height: 50vh;
+  }
+}
+
+aside{
+  border: 1px solid #d6d6d6;
+  #layout > .horizontal(0);
+  > *:first-child{
+    width: 40%;
+  }
+  > *:last-child{
+    width: 60%;
+  }
+}
+
+pre[class*='language-']{
+  margin: 0;
+  background-color: transparent;
+}
+
+a{
+  text-decoration: none;
+}
+
+@import '_typography.less';
+
+.example{
+  //border: 1px solid #d6d6d6;
+  padding: 1rem;
+}
+
+.box{
+  width: 32px;
+  height: 32px;
+
+  background-color: #f9f9f9;
+  border: 1px solid #d6d6d6;
+
+  &.major{
+    width: 64px;
+    height: 64px;
+  }
+
+  &.minor{
+    width: 28px;
+    height: 28px;
+  }
+  
+}
+
+@import '_examples.less';
+
