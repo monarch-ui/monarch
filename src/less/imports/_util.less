@@ -1,0 +1,18 @@
+#util{
+
+  .textSelection(@color:white,@backgroundColor:transparent){
+    &::-moz-selection,&::selection { 
+      background-color: @backgroundColor;
+      color: @color;
+    }
+  }
+
+  .diableUserSelect(){
+    -webkit-user-select : none;  
+       -moz-user-select : none;
+        -ms-user-select : none;
+         -o-user-select : none;
+            user-select : none;
+  }
+
+}
