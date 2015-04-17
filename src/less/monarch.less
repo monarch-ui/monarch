@@ -13,7 +13,21 @@
 // variables : measurements
 //----------------------------------
 @baseUnit   : 1rem;
+@radius     : 2px;
+
+// variables : typography
+//----------------------------------
+@sans       : 'Arial', sans serif;
+@serif      : 'Georgia', serif;
 @lineHeight : 1.25;
+@fontSize   : @baseUnit;
+
+// variables : z-index
+// ---------------------------
+@zContent      : 1;
+@zUI           : 2;
+@zSystem       : 500;
+@zMeta         : 999999;
 
 // variables : colors non-semantic
 // ---------------------------------
@@ -38,14 +52,27 @@
 @white     : #fff;
 @paper     : #fcfaf2;
 @newsprint : #f0ece8;
-@pee       : #F4FD72;
+@pee       : #f4fd72;
+
+// variables : colors semantic
+// ---------------------------------
+@buttonColor       : @blue;
+@buttonTextColor   : @white;
+@buttonMajorColor  : @green;
+
+@disabledColor     : @gray;
+@disabledTextColor : @silver;
+
+@linkTextColor     : @blue;
 
 
 // mixins
 //----------------------------------
-@import 'imports/_reset.less';
 @import 'imports/_flex.less';
 @import 'imports/_layout.less';
+@import 'imports/_reset.less';
+@import 'imports/_transition.less';
+@import 'imports/_util.less';
 
 // scaffolding: common resets
 //----------------------------------

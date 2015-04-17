@@ -1,0 +1,81 @@
+// ui: button mixin
+//------------------------------------
+#button{
+
+  .theme(@color,@backgroundColor){
+    background-color: @backgroundColor;
+    color:@color;
+    
+    .hover(@backgroundColor);
+    .active(@backgroundColor);
+  }
+
+  .hover(@backgroundColor){
+    &:hover,.hover{
+      background-color : darken(@backgroundColor,10%);
+    }
+  }
+
+  .active(@backgroundColor){
+    &:active,.active{
+      background-color : darken(@backgroundColor,20%);
+    }
+  }
+
+}
+
+// ui: buttons: core properties
+//------------------------------------
+a.button, 
+button, 
+[type='button'], 
+input[type='submit']
+{
+
+  #transition > .property(background-color);
+  #transition > .duration(0.2s);
+
+  #util > .disableUserSelect();
+  #util > .textSelection(inherit);
+
+  border           : 1px solid transparent;
+  border-radius    : @radius;
+  cursor           : pointer;
+  display          : inline-block;
+  font             : bold @baseUnit/1.8em @sans;
+  outline          : none;
+  padding          : 0.15rem 0.625rem;
+  
+}
+
+a.button, 
+button, 
+[type='button'], 
+input[type='submit']{
+
+  #button > .theme(@buttonTextColor,@buttonColor);
+  
+  // disabled variation
+  // -------------------
+  &.disabled,
+  &[disabled]{
+    cursor : default;
+    #button > .theme(@disabledTextColor,@disabledColor);
+    &:hover,.hover{
+      background-color : @disabledColor;
+    }
+  }
+
+  // major variation
+  // -------------------
+  &.minor{
+    #button > .theme(@linkTextColor,transparent);
+  }
+  
+  // minor variation
+  // -------------------
+  &.major{
+    #button > .theme(@buttonTextColor,@buttonMajorColor);
+  }
+
+}

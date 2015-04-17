@@ -3,7 +3,7 @@
   .grid(@gutter:0.75rem){
     #flex > .row();
     #flex > .wrap();
-    align-items: stretch; // equal height columns
+    align-items: stretch;
     align-content: flex-start;
     margin: 0 @gutter * -0.5;
     > *,[class*='column']{
@@ -25,8 +25,6 @@
   }
 
   .column(@span:12, @gutter:0.75rem){
-    //-webkit-flex-grow: 1;
-    //flex-grow: 1;
     width : percentage(@span / 12);
   }
 
